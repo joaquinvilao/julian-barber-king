@@ -608,10 +608,32 @@ main {
 }
 
 /* =========================================================
-   RESPONSIVE
+   DISEÑO RESPONSIVO
    ========================================================= */
 
+/* Tablets / pantallas medianas */
+@media (max-width: 992px) {
+    .encabezado-interior {
+        padding-inline: 1rem;
+    }
+
+    .tarjeta-servicio {
+        flex: 1 1 calc(50% - 40px);
+    }
+
+    .portada {
+        min-height: 70vh;
+    }
+}
+
+/* Celulares */
 @media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    /* Requisito del ramo: solo logo en móvil */
     .navegacion-principal {
         display: none;
     }
@@ -621,35 +643,83 @@ main {
     }
 
     .portada {
-        min-height: 60vh;
+        min-height: 65vh;
+        padding-inline: 1.5rem;
+    }
+
+    .portada h1 {
+        font-size: 1.9rem;
+        letter-spacing: 0.04em;
+    }
+
+    .portada h1 span {
+        font-size: 1.3rem;
+    }
+
+    .portada-subtitulo {
+        font-size: 0.95rem;
+    }
+
+    .servicios {
+        padding-inline: 1.5rem;
+    }
+
+    .servicios h2 {
+        font-size: 2.1rem;
+    }
+
+    .grilla-servicios {
+        gap: 1.5rem;
+    }
+
+    .tarjeta-servicio {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .proyectos {
+        padding-inline: 1.5rem;
+    }
+
+    .grilla-proyectos {
+        grid-template-columns: 1fr;
     }
 
     .inicio-quienes-contenido,
     .historia-flex {
         flex-direction: column;
+        text-align: left;
     }
 
-    .extra-flex {
-        flex-direction: column;
+    .historia-seccion {
+        padding-inline: 1.5rem;
     }
 
-    .diseno-contacto {
+    .grilla-contacto {
         grid-template-columns: 1fr;
     }
 
-    .diseno-proyectos {
-        grid-template-columns: 1fr;
+    .llamada-contacto {
+        padding-inline: 1.5rem;
     }
 
-    .diseno-equipo {
-        grid-template-columns: 1fr;
+    .llamada-interior h2 {
+        font-size: 1.9rem;
     }
 }
 
-@media (min-width: 769px) {
-    .navegacion-principal {
-        display: block;
+/* Celulares muy pequeños */
+@media (max-width: 480px) {
+    .portada h1 {
+        font-size: 1.7rem;
+    }
+
+    .boton-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .llamada-interior h2 {
+        font-size: 1.6rem;
     }
 }
-
-
