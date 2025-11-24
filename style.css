@@ -139,7 +139,7 @@ main {
     align-items: center;
     background-image:
         linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
-        url("../barberia.jpg"); 
+        url("barberia.jpg"); 
     background-size: cover;
     background-position: center;
     color: #fef7e8;
@@ -344,7 +344,7 @@ main {
     justify-content: center;
     background-image:
         linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
-        url("../fondo2.jpg");
+        url("fondo2.jpg");
     color: #f8ebcf;
     text-align: center;
 }
@@ -404,7 +404,7 @@ main {
     padding: 4.5rem 2rem;
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.699), rgba(12, 8, 5, 0.75)),
-        url("../fondo2.jpg");
+        url("fondo2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -442,7 +442,7 @@ main {
     padding: 3.5rem 0 2rem;
     background-image:
         linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
-        url("../fondo2.jpg");
+        url("fondo2.jpg");
     color: #f8ebcf;
 }
 
@@ -651,3 +651,4 @@ main {
         display: block;
     }
 }
+
