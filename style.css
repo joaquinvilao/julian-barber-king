@@ -1,0 +1,653 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    background-color: #f5e4c3; 
+    color: #1a130e;         
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor {
+    width: min(1300px, 100%);
+    margin: 0 auto;
+}
+
+/* LETRA */
+h1 {
+    font-family: "Playfair Display", serif;
+    color: #fafafa;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    color: #1a130e;    
+}
+
+h3 {
+    font-family: "Playfair Display", serif;
+    color: #1a130e;   
+}
+
+/* =========================================================
+   CABECERA FIJA Y NAVEGACIÓN
+   ========================================================= */
+
+.encabezado-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(19, 13, 9, 0.96);
+    border-bottom: 3px solid rgba(214, 163, 85, 0.4);
+}
+
+/* Acá hay un ejemplo de uso de FLEX*/ 
+
+.encabezado-interior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.6rem;
+}
+
+.logo img {
+    height: 75px;
+    display: block;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navegacion-principal ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navegacion-principal a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #f9f3e6;
+    position: relative;
+}
+
+.navegacion-principal a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    width: 0;
+    height: 2px;
+    background: #d6a355;
+    transition: width 0.2s ease-out;
+}
+
+.navegacion-principal a:hover::after,
+.navegacion-principal a.activo::after {
+    width: 100%;
+}
+
+/* Iconos de redes en el menú */
+.redes-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Con esto quito el subrayado para iconos redes */
+.redes-nav a::after {
+    display: none;
+}
+
+.redes-nav img {
+    width: 28px;
+    height: 28px;
+    display: block;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.redes-nav img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* ESPACIADO PARA QUE NO TAPE EL HEADER */
+main {
+    padding-top: 90px;
+}
+
+/* =========================================================
+   PORTADA (HERO)
+   ========================================================= */
+
+.portada {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
+        url("../barberia.jpg"); 
+    background-size: cover;
+    background-position: center;
+    color: #fef7e8;
+}
+
+.portada-contenido {
+    text-align: center;
+    max-width: 700px;
+}
+
+.portada h1 {
+    font-size: clamp(2.4rem, 4vw, 3.3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.portada h1 span {
+    display: block;
+    font-size: 1.6rem;
+    color: #f3cf86; 
+    margin-top: 0.4rem;
+}
+
+.portada-subtitulo {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.boton-principal,
+.boton-secundario {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 
+    transform 0.15s ease-out,        
+    box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out;
+}
+
+.boton-principal {
+    background: #d6a355;
+    color: #120c07;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid #f6d89c;
+    cursor: pointer;
+}
+
+.boton-principal:hover {
+    background: #f3cf86;
+    transform: translateY(-1px);
+}
+
+.boton-secundario {
+    background: transparent;
+    color: #f4e6cc;
+    border: 1px solid #d6a355;
+}
+
+.boton-secundario:hover {
+    background: #d6a355;
+    color: #120c07;
+}
+
+/* Botón WhatsApp */
+.boton-whatsapp {
+    background: #029c3a;
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                background 0.15s ease;
+}
+
+.boton-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.icono-whatsapp svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* =========================================================
+   SECCIÓN QUIÉNES SOMOS (HOME)
+   ========================================================= */
+
+.inicio-quienes-somos {
+    padding: 4rem 0;
+    font-size: 17px;
+}
+
+.inicio-quienes-somos h2 {
+    margin-bottom: 25px;
+}
+
+.inicio-quienes-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.inicio-quienes-texto {
+    flex: 1 1 200px;
+}
+
+.inicio-quienes-imagen {
+    border-radius: 12px;
+    flex: 1 1 200px;
+}
+
+.inicio-quienes-imagen img {
+    width: 90%;
+    border-radius: 3px;
+    display: block;
+}
+
+.enlace-mas {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 22px;
+    color: #885f25;
+}
+
+/* =========================================================
+   SERVICIOS
+   ========================================================= */
+
+.servicios {
+    padding: 4rem 0;
+    background: #f8ebcf;
+}
+
+.servicios h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.servicios .seccion-subtitulo {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 22px;
+    font-weight: 530;
+}
+
+.diseno-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 3rem;
+}
+
+.tarjeta-servicio {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 360px;
+    min-width: 260px;
+    background: #f2e0bd;
+    padding: 2.5rem 2.2rem;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   PROYECTOS
+   ========================================================= */
+
+.proyectos {
+    padding: 5rem 0;
+    justify-content: center;
+    background-image:
+        linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
+        url("../fondo2.jpg");
+    color: #f8ebcf;
+    text-align: center;
+}
+
+.proyectos h2 {
+    text-align: center;
+    font-size: 45px;
+    color:#f8ebcf;
+}
+
+.proyectos h3 {
+    text-align: center;
+    font-size: 25px;
+    color:#f8ebcf;
+}
+
+.descripcion-proyecto {
+    padding: 0.8rem 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: #e0cfa8;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Acá hay un ejemplo de uso de grip*/
+
+.diseno-proyectos {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+}
+
+.tarjeta-proyecto {
+    background: #180e08;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(214, 163, 85, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================================
+   CTA CONTACTO
+   ========================================================= */
+
+.llamada-contacto {
+    color: #f4e6cc;
+    font-size: 18px;
+    padding: 4.5rem 2rem;
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.699), rgba(12, 8, 5, 0.75)),
+        url("../fondo2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.llamada-interior {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.llamada-interior h2 {
+    color: #f8edd7;
+    font-size: 38px;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.llamada-interior p {
+    color: #e8d6b0;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* =========================================================
+   PÁGINAS INTERNAS (QUIÉNES SOMOS / CONTACTO)
+   ========================================================= */
+
+.pagina {
+    background: #f5e4c3;
+}
+
+.pagina-portada {
+    padding: 3.5rem 0 2rem;
+    background-image:
+        linear-gradient(to bottom, rgba(12, 8, 5, 0.8), rgba(12, 8, 5, 0.95)),
+        url("../fondo2.jpg");
+    color: #f8ebcf;
+}
+
+.pagina-portada h1 {
+    font-size: 2.1rem;
+}
+
+/* Historia / Quién es Julian */
+.historia-seccion {
+    padding: 3.5rem 0;
+    margin: 5rem;
+}
+
+.historia-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.historia-texto {
+    flex: 1;
+}
+
+.historia-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.historia-imagen img {
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 10px 25px rgba(60, 40, 20, 0.4);
+}
+
+/* =========================================================
+   SECCIÓN EQUIPO (POR SI LA AGREGAS MÁS ADELANTE)
+   ========================================================= */
+
+.equipo {
+    padding: 3.5rem 0 4rem;
+    background: #20150f;
+    color: #f8ebcf;
+}
+
+.equipo h2 {
+    text-align: center;
+}
+
+.equipo .seccion-subtitulo {
+    text-align: center;
+}
+
+.diseno-equipo {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+}
+
+.tarjeta-equipo {
+    background: #2c1b12;
+    border-radius: 16px;
+    padding-bottom: 1.4rem;
+    border: 1px solid rgba(214, 163, 85, 0.4);
+}
+
+.tarjeta-equipo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 1px 0 0;
+    display: block;
+}
+
+.tarjeta-equipo h3 {
+    padding: 0.9rem 1rem 0.3rem;
+}
+
+.tarjeta-equipo p {
+    padding: 0 1rem;
+    font-size: 0.92rem;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.seccion-contacto {
+    padding: 3.5rem 0 4rem;
+}
+
+.diseno-contacto {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    gap: 2.2rem;
+}
+
+.info-contacto ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.info-contacto li + li {
+    margin-top: 0.4rem;
+}
+
+.contenedor-formulario {
+    background: #f8ebcf;
+    border-radius: 18px;
+    padding: 1.8rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(214, 163, 85, 0.6);
+}
+
+.formulario-contacto .grupo-campo {
+    margin-bottom: 1rem;
+}
+
+.formulario-contacto label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    padding: 0.55rem 0.7rem;
+    font: inherit;
+    background: #fffaf0;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    outline: 2px solid #d6a355;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.pie-principal {
+    background: #120c07;
+    color: #f5e4c3;
+    padding: 1.6rem 0;
+    font-size: 0.85rem;
+}
+
+.pie-interior {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pie-pequeno {
+    opacity: 0.8;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .navegacion-principal {
+        display: none;
+    }
+
+    .encabezado-interior {
+        justify-content: center;
+    }
+
+    .portada {
+        min-height: 60vh;
+    }
+
+    .inicio-quienes-contenido,
+    .historia-flex {
+        flex-direction: column;
+    }
+
+    .extra-flex {
+        flex-direction: column;
+    }
+
+    .diseno-contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .diseno-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    .diseno-equipo {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .navegacion-principal {
+        display: block;
+    }
+}

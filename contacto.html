@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Julian Barber King | Contacto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="encabezado-principal">
+    <div class="contenedor encabezado-interior">
+        <a href="index.html" class="logo">
+            <img src="barberking.png" alt="Logo Julian Barber King">
+        </a>
+        <nav class="navegacion-principal">
+            <ul class="menu-navegacion">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                <li><a class="activo" href="contacto.html">Contacto</a></li>
+                <!-- ICONOS REDES EN NAV -->
+                <li class="redes-nav">
+                  <a href="https://www.instagram.com/j_barberking" target="_blank">
+                    <img src="instagram.png" alt="Instagram">
+                  </a>
+                  <a href="https://www.tiktok.com/@j_barberking" target="_blank">
+                    <img src="tiktok.webp" alt="TikTok">
+                  </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="pagina">
+    <section class="pagina-portada">
+        <div class="contenedor">
+            <h1>Contacto</h1>
+            <p>Agenda tu hora o escribeme tus dudas.</p>
+        </div>
+    </section>
+
+    <section class="seccion-contacto">
+        <div class="contenedor diseno-contacto">
+            <div class="info-contacto">
+                <h2>Contactame</h2>
+                <p>
+                    Completa el formulario y te responderé lo antes posible.  
+                    También puedes escribirnos directamente a mi WhatsApp o redes sociales.
+                </p>
+                <ul>
+                    <li><strong>Dirección:</strong> San Pedro de la Paz, Región del Biobío</li>
+                    <li><strong>Teléfono:</strong> +56 9 0000 0000</li>
+                    <li><strong>Horario:</strong> Lunes a Sábabo de 10:00 - 20:00</li>
+                </ul>
+            </div>
+
+            <!-- FORMULARIO CON POST A LA API -->
+            <div class="contenedor-formulario">
+                <form class="formulario-contacto" action="https://aterbonus.dev/api/toys/forms" method="POST" novalidate>
+                    <div class="grupo-campo">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required maxlength="200" placeholder="Tu nombre">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="email">E-mail de contacto</label>
+                        <input type="email" id="email" name="email" required maxlength="200" placeholder="tucorreo@example.com">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" required maxlength="200" placeholder="Reserva, consulta, colaboración...">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="content">Contenido</label>
+                        <textarea id="content" name="content" required maxlength="1000" rows="5" placeholder="Cuéntanos en qué te podemos ayudar"></textarea>
+                    </div>
+
+                    <button type="submit" class="boton-principal">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="pie-principal">
+    <div class="contenedor pie-interior">
+        <p>© 2025 Julian Barber King. Página hecha por Joaquín Vila.</p>
+    </div>
+</footer>
+</body>
+</html>
